@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="es4-zF-xcN">
             <objects>
-                <viewController id="2Jp-jS-f8a" customClass="ViewController" customModule="Xcoders_ResearchKit_Demo3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Jp-jS-f8a" customClass="MainViewController" customModule="Xcoders_ResearchKit_Demo3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aVP-sM-VzA"/>
                         <viewControllerLayoutGuide type="bottom" id="A9o-21-nCt"/>
@@ -29,41 +29,14 @@
                                     <rect key="frame" x="11" y="149" width="378" height="38"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbm-MO-Gaa">
-                                <rect key="frame" x="251" y="285" width="99" height="30"/>
-                                <state key="normal" title="Join the Study">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="250" width="80" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="251" width="80" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="reviewAndAgreeConsent:" destination="Zba-DV-4rQ" eventType="touchUpInside" id="tyi-AR-zqv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH1-pN-Wac">
-                                <rect key="frame" x="261" y="368" width="79" height="30"/>
-                                <state key="normal" title="Learn More">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="161" y="322" width="79" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="161" y="323" width="79" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="launchConsent:" destination="2Jp-jS-f8a" eventType="touchUpInside" id="stU-6T-Ztn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuf-aQ-3NN">
                                 <rect key="frame" x="241" y="216" width="118" height="30"/>
                                 <state key="normal" title="See if you qualify">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="141" y="248" width="118" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="eAd-vF-WrH" kind="show" id="HVY-pV-5K2"/>
                                 </connections>
@@ -74,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zba-DV-4rQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="278"/>
+            <point key="canvasLocation" x="-658.5" y="178"/>
         </scene>
         <!--Qualification Questions-->
         <scene sceneID="xyQ-cq-WiQ">
@@ -197,7 +170,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Qualification Questions" id="1uw-cv-VZm">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="b4R-hv-xB9"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="b4R-hv-xB9">
+                            <connections>
+                                <segue destination="Jk0-IS-rpr" kind="unwind" unwindAction="unwindToViewController:" id="Lg9-Hv-eBJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="cwk-9U-1Cg">
                             <connections>
                                 <segue destination="SyQ-Nm-L3l" kind="show" id="1vG-4P-sqW"/>
@@ -211,13 +188,14 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gV-kp-cgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Jk0-IS-rpr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="-59"/>
+            <point key="canvasLocation" x="1233" y="-59"/>
         </scene>
         <!--Qualified-->
         <scene sceneID="jCY-3n-sav">
             <objects>
-                <viewController id="SyQ-Nm-L3l" sceneMemberID="viewController">
+                <viewController id="SyQ-Nm-L3l" customClass="ConsentViewController" customModule="Xcoders_ResearchKit_Demo3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FTa-qD-dv6"/>
                         <viewControllerLayoutGuide type="bottom" id="8BR-3I-TU5"/>
@@ -225,13 +203,36 @@
                     <view key="view" contentMode="scaleToFill" id="lee-jS-b7j">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are eligible to join the study" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwI-UP-bCU">
+                                <rect key="frame" x="178" y="146" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wML-YZ-Bet">
+                                <rect key="frame" x="206" y="285" width="189" height="30"/>
+                                <state key="normal" title="Give Consent to Participate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchConsent:" destination="SyQ-Nm-L3l" eventType="touchUpInside" id="vec-ab-Kpe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="wML-YZ-Bet" secondAttribute="centerX" id="1HB-kV-0xb"/>
+                            <constraint firstAttribute="centerY" secondItem="wML-YZ-Bet" secondAttribute="centerY" id="J3m-hu-cxP"/>
+                            <constraint firstItem="lwI-UP-bCU" firstAttribute="top" secondItem="FTa-qD-dv6" secondAttribute="bottom" constant="82" id="XHc-Gi-buU"/>
+                            <constraint firstAttribute="centerX" secondItem="lwI-UP-bCU" secondAttribute="centerX" id="bmJ-BU-D3d"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Qualified" id="u3z-jB-xA1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsY-Dk-xrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213" y="-59"/>
+            <point key="canvasLocation" x="2133" y="274"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6gs-z9-9kj">
@@ -243,11 +244,12 @@
                     </navigationBar>
                     <connections>
                         <segue destination="QwH-lz-rwD" kind="relationship" relationship="rootViewController" id="B0J-K6-5kS"/>
+                        <segue destination="Jk0-IS-rpr" kind="unwind" unwindAction="unwindToViewController:" id="feH-uB-ZZJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2k-d0-YYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="27"/>
+            <point key="canvasLocation" x="405" y="-59"/>
         </scene>
     </scenes>
 </document>

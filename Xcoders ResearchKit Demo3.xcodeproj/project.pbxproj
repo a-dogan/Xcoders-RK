@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		033FB7C11B0464BB00B9020E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033FB7C01B0464BB00B9020E /* Main.storyboard */; };
-		033FB7C41B046CB900B9020E /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FB7C31B046CB900B9020E /* ConsentViewController.swift */; };
 		034FEC701B06C7BF00F22986 /* IFConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC6F1B06C7BF00F22986 /* IFConsent.swift */; };
 		034FEC7C1B06D2E600F22986 /* HTMLContent in Resources */ = {isa = PBXBuildFile; fileRef = 034FEC7B1B06D2E600F22986 /* HTMLContent */; };
 		034FEC801B07D51200F22986 /* StepResultsMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC7F1B07D51200F22986 /* StepResultsMananager.swift */; };
 		034FEC861B093F8B00F22986 /* QualificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC851B093F8B00F22986 /* QualificationViewController.swift */; };
+		034FEC881B0967F300F22986 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC871B0967F300F22986 /* MainViewController.swift */; };
 		037A64251B025F5B000A278E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A64241B025F5B000A278E /* AppDelegate.swift */; };
-		037A64271B025F5B000A278E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A64261B025F5B000A278E /* ViewController.swift */; };
+		037A64271B025F5B000A278E /* ConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A64261B025F5B000A278E /* ConsentViewController.swift */; };
 		037A642C1B025F5B000A278E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037A642B1B025F5B000A278E /* Images.xcassets */; };
 		037A642F1B025F5B000A278E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037A642D1B025F5B000A278E /* LaunchScreen.xib */; };
 		037A643B1B025F5B000A278E /* Xcoders_ResearchKit_Demo3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A643A1B025F5B000A278E /* Xcoders_ResearchKit_Demo3Tests.swift */; };
@@ -47,15 +47,15 @@
 
 /* Begin PBXFileReference section */
 		033FB7C01B0464BB00B9020E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		033FB7C31B046CB900B9020E /* ConsentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
 		034FEC6F1B06C7BF00F22986 /* IFConsent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFConsent.swift; sourceTree = "<group>"; };
 		034FEC7B1B06D2E600F22986 /* HTMLContent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTMLContent; sourceTree = "<group>"; };
 		034FEC7F1B07D51200F22986 /* StepResultsMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepResultsMananager.swift; sourceTree = "<group>"; };
 		034FEC851B093F8B00F22986 /* QualificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualificationViewController.swift; sourceTree = "<group>"; };
+		034FEC871B0967F300F22986 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		037A641F1B025F5B000A278E /* Xcoders ResearchKit Demo3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcoders ResearchKit Demo3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		037A64231B025F5B000A278E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037A64241B025F5B000A278E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		037A64261B025F5B000A278E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		037A64261B025F5B000A278E /* ConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentViewController.swift; sourceTree = "<group>"; };
 		037A642B1B025F5B000A278E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		037A642E1B025F5B000A278E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		037A64341B025F5B000A278E /* Xcoders ResearchKit Demo3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Xcoders ResearchKit Demo3Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +94,6 @@
 		033FB7C21B046BAE00B9020E /* Consent */ = {
 			isa = PBXGroup;
 			children = (
-				033FB7C31B046CB900B9020E /* ConsentViewController.swift */,
 				034FEC6F1B06C7BF00F22986 /* IFConsent.swift */,
 			);
 			name = Consent;
@@ -136,10 +135,10 @@
 				037A64721B02EBB3000A278E /* Onboarding */,
 				037A64241B025F5B000A278E /* AppDelegate.swift */,
 				033FB7C01B0464BB00B9020E /* Main.storyboard */,
-				037A64261B025F5B000A278E /* ViewController.swift */,
 				037A642B1B025F5B000A278E /* Images.xcassets */,
 				037A642D1B025F5B000A278E /* LaunchScreen.xib */,
 				037A64221B025F5B000A278E /* Supporting Files */,
+				034FEC871B0967F300F22986 /* MainViewController.swift */,
 			);
 			path = "Xcoders ResearchKit Demo3";
 			sourceTree = "<group>";
@@ -181,6 +180,7 @@
 		037A64721B02EBB3000A278E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				037A64261B025F5B000A278E /* ConsentViewController.swift */,
 				034FEC851B093F8B00F22986 /* QualificationViewController.swift */,
 			);
 			name = Onboarding;
@@ -311,9 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				034FEC861B093F8B00F22986 /* QualificationViewController.swift in Sources */,
-				037A64271B025F5B000A278E /* ViewController.swift in Sources */,
-				033FB7C41B046CB900B9020E /* ConsentViewController.swift in Sources */,
+				037A64271B025F5B000A278E /* ConsentViewController.swift in Sources */,
 				037A64251B025F5B000A278E /* AppDelegate.swift in Sources */,
+				034FEC881B0967F300F22986 /* MainViewController.swift in Sources */,
 				034FEC701B06C7BF00F22986 /* IFConsent.swift in Sources */,
 				034FEC801B07D51200F22986 /* StepResultsMananager.swift in Sources */,
 			);
