@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Jp-jS-f8a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Jp-jS-f8a">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,25 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intermittent Fasting Research Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-rY-lhN">
-                                <rect key="frame" x="95" y="148" width="410" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intermittent Fasting Research Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-rY-lhN">
+                                <rect key="frame" x="143" y="120" width="315.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="11" y="147" width="378" height="38"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="43" y="216" width="315.5" height="24"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="11" y="149" width="378" height="38"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuf-aQ-3NN">
-                                <rect key="frame" x="241" y="216" width="118" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHL-kr-5H7">
+                                <rect key="frame" x="250" y="334" width="101" height="30"/>
+                                <state key="normal" title="Resume Study">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="150" y="359" width="101" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="showSurvey:" destination="2Jp-jS-f8a" eventType="touchUpInside" id="duX-Rd-sKo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuf-aQ-3NN">
+                                <rect key="frame" x="241" y="267" width="118" height="30"/>
                                 <state key="normal" title="See if you qualify">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="141" y="248" width="118" height="30"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="141" y="285" width="118" height="30"/>
                                 </variation>
                                 <connections>
                                     <segue destination="eAd-vF-WrH" kind="show" id="HVY-pV-5K2"/>
@@ -43,11 +55,35 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iuf-aQ-3NN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wfi-rY-lhN" secondAttribute="bottom" constant="123" id="3JZ-F9-X5S"/>
+                            <constraint firstAttribute="centerX" secondItem="hHL-kr-5H7" secondAttribute="centerX" id="4Jz-5c-roo"/>
+                            <constraint firstAttribute="centerX" secondItem="hHL-kr-5H7" secondAttribute="centerX" id="ABR-IA-yw9"/>
+                            <constraint firstAttribute="centerY" secondItem="hHL-kr-5H7" secondAttribute="centerY" id="DWR-9M-zWO"/>
+                            <constraint firstItem="hHL-kr-5H7" firstAttribute="top" secondItem="iuf-aQ-3NN" secondAttribute="bottom" constant="44" id="EgY-jY-s43"/>
+                            <constraint firstAttribute="centerX" secondItem="iuf-aQ-3NN" secondAttribute="centerX" id="PCH-3k-2cy"/>
+                            <constraint firstItem="Wfi-rY-lhN" firstAttribute="top" secondItem="aVP-sM-VzA" secondAttribute="bottom" constant="100" id="fnK-DG-xN1"/>
+                            <constraint firstAttribute="centerX" secondItem="Wfi-rY-lhN" secondAttribute="centerX" id="gup-Pg-YfP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Jz-5c-roo"/>
+                                <exclude reference="EgY-jY-s43"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="4Jz-5c-roo"/>
+                                <exclude reference="ABR-IA-yw9"/>
+                                <exclude reference="DWR-9M-zWO"/>
+                                <include reference="EgY-jY-s43"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zba-DV-4rQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-658.5" y="178"/>
+            <point key="canvasLocation" x="-713" y="234"/>
         </scene>
         <!--Qualification Questions-->
         <scene sceneID="xyQ-cq-WiQ">

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030A34DE1B0C219900EC50FF /* SurveyTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A34DD1B0C219900EC50FF /* SurveyTaskManager.swift */; };
 		033FB7C11B0464BB00B9020E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033FB7C01B0464BB00B9020E /* Main.storyboard */; };
 		034FEC701B06C7BF00F22986 /* IFConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC6F1B06C7BF00F22986 /* IFConsent.swift */; };
 		034FEC7C1B06D2E600F22986 /* HTMLContent in Resources */ = {isa = PBXBuildFile; fileRef = 034FEC7B1B06D2E600F22986 /* HTMLContent */; };
-		034FEC801B07D51200F22986 /* StepResultsMananager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC7F1B07D51200F22986 /* StepResultsMananager.swift */; };
 		034FEC861B093F8B00F22986 /* QualificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC851B093F8B00F22986 /* QualificationViewController.swift */; };
 		034FEC881B0967F300F22986 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC871B0967F300F22986 /* MainViewController.swift */; };
 		037A64251B025F5B000A278E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A64241B025F5B000A278E /* AppDelegate.swift */; };
@@ -46,10 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030A34DD1B0C219900EC50FF /* SurveyTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTaskManager.swift; sourceTree = "<group>"; };
 		033FB7C01B0464BB00B9020E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		034FEC6F1B06C7BF00F22986 /* IFConsent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFConsent.swift; sourceTree = "<group>"; };
 		034FEC7B1B06D2E600F22986 /* HTMLContent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTMLContent; sourceTree = "<group>"; };
-		034FEC7F1B07D51200F22986 /* StepResultsMananager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepResultsMananager.swift; sourceTree = "<group>"; };
 		034FEC851B093F8B00F22986 /* QualificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualificationViewController.swift; sourceTree = "<group>"; };
 		034FEC871B0967F300F22986 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		037A641F1B025F5B000A278E /* Xcoders ResearchKit Demo3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcoders ResearchKit Demo3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030A34D91B0C211300EC50FF /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				030A34DD1B0C219900EC50FF /* SurveyTaskManager.swift */,
+			);
+			name = Survey;
+			sourceTree = "<group>";
+		};
 		033FB7BB1B04641900B9020E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,21 +107,13 @@
 			name = Consent;
 			sourceTree = "<group>";
 		};
-		034FEC811B07D51800F22986 /* Results Manager */ = {
-			isa = PBXGroup;
-			children = (
-				034FEC7F1B07D51200F22986 /* StepResultsMananager.swift */,
-			);
-			name = "Results Manager";
-			sourceTree = "<group>";
-		};
 		037A64161B025F5B000A278E = {
 			isa = PBXGroup;
 			children = (
 				033FB7BB1B04641900B9020E /* Frameworks */,
+				037A64201B025F5B000A278E /* Products */,
 				037A64211B025F5B000A278E /* Xcoders ResearchKit Demo3 */,
 				037A64371B025F5B000A278E /* Xcoders ResearchKit Demo3Tests */,
-				037A64201B025F5B000A278E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,16 +129,16 @@
 		037A64211B025F5B000A278E /* Xcoders ResearchKit Demo3 */ = {
 			isa = PBXGroup;
 			children = (
-				034FEC811B07D51800F22986 /* Results Manager */,
 				034FEC7B1B06D2E600F22986 /* HTMLContent */,
-				033FB7C21B046BAE00B9020E /* Consent */,
-				037A64721B02EBB3000A278E /* Onboarding */,
-				037A64241B025F5B000A278E /* AppDelegate.swift */,
 				033FB7C01B0464BB00B9020E /* Main.storyboard */,
-				037A642B1B025F5B000A278E /* Images.xcassets */,
-				037A642D1B025F5B000A278E /* LaunchScreen.xib */,
-				037A64221B025F5B000A278E /* Supporting Files */,
+				037A64241B025F5B000A278E /* AppDelegate.swift */,
 				034FEC871B0967F300F22986 /* MainViewController.swift */,
+				037A642B1B025F5B000A278E /* Images.xcassets */,
+				033FB7C21B046BAE00B9020E /* Consent */,
+				037A642D1B025F5B000A278E /* LaunchScreen.xib */,
+				037A64721B02EBB3000A278E /* Onboarding */,
+				037A64221B025F5B000A278E /* Supporting Files */,
+				030A34D91B0C211300EC50FF /* Survey */,
 			);
 			path = "Xcoders ResearchKit Demo3";
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 				037A64251B025F5B000A278E /* AppDelegate.swift in Sources */,
 				034FEC881B0967F300F22986 /* MainViewController.swift in Sources */,
 				034FEC701B06C7BF00F22986 /* IFConsent.swift in Sources */,
-				034FEC801B07D51200F22986 /* StepResultsMananager.swift in Sources */,
+				030A34DE1B0C219900EC50FF /* SurveyTaskManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

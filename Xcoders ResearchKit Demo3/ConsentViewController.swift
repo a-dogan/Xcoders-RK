@@ -43,7 +43,6 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
     
     
     // MARK: ORKTaskViewControllerDelegate
-    
     func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
         /*
         The `reason` passed to this method indicates why the task view
@@ -53,9 +52,24 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
         The actual result of the task is on the `result` property of the task
         view controller.
         */
-        //taskResultFinishedCompletionHandler?(taskViewController.result)
+        
+        taskResultFinishedCompletionHandler(taskViewController.result)
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func taskResultFinishedCompletionHandler(result:ORKTaskResult) {
+        
+        
+        if let taskResult:[ORKResult] = result.results as? [ORKResult] {
+            
+            for stepResult in taskResult {
+                
+                println(stepResult)
+                
+            }
+        }
     }
     
     
