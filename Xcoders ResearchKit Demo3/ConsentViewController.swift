@@ -55,23 +55,20 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
         
         taskResultFinishedCompletionHandler(taskViewController.result)
         
-        taskViewController.dismissViewControllerAnimated(true, completion: nil)
+        taskViewController.dismissViewControllerAnimated(true, completion: {
+                self.performSegueWithIdentifier("backToMainViewController", sender: self)
+            }
+            
+        )
     }
     
     
     func taskResultFinishedCompletionHandler(result:ORKTaskResult) {
-        
-        
         if let taskResult:[ORKResult] = result.results as? [ORKResult] {
-            
             for stepResult in taskResult {
-                
                 println(stepResult)
-                
             }
         }
     }
-    
-    
 }
 

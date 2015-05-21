@@ -11,6 +11,13 @@ import ResearchKit
 
 class MainViewController: UIViewController, ORKTaskViewControllerDelegate {
 
+    enum Identifier:String {
+        case InstructionStep = "Instruction", WeightStep = "Weight"
+        
+        func value() -> String {
+            return rawValue
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -21,7 +28,7 @@ class MainViewController: UIViewController, ORKTaskViewControllerDelegate {
         //create a step array for each step that will be presented to the participant
         var steps = [ORKStep]()
         
-        let instructionStep = ORKInstructionStep(identifier: "InstructionStep")
+        let instructionStep = ORKInstructionStep(identifier: Identifier.InstructionStep.value())
         instructionStep.title = "Getting Started"
         instructionStep.text = "This one time survey will be used to gather some baseline measurements. This data will be used to gauge your progess as you progress in the study."
         steps += [instructionStep]
@@ -29,7 +36,7 @@ class MainViewController: UIViewController, ORKTaskViewControllerDelegate {
         let weightAnswerFormat = ORKAnswerFormat.integerAnswerFormatWithUnit("lbs")
         weightAnswerFormat.minimum = 0
         
-        let weightStep = ORKQuestionStep(identifier: "WeigtStep", title: "Current Weight", answer:weightAnswerFormat)
+        let weightStep = ORKQuestionStep(identifier: Identifier.WeightStep.value(), title: "Current Weight", answer:weightAnswerFormat)
 
         steps += [weightStep]
         
@@ -57,11 +64,27 @@ class MainViewController: UIViewController, ORKTaskViewControllerDelegate {
         view controller.
         */
         
+        if let taskResult:[ORKResult] = taskViewController.result.results as? [ORKResult] {
+            for stepResult in taskResult {
+                println(stepResult.identifier)
+                if stepResult.identifier == Identifier.InstructionStep.value() {
+                    println(stepResult.identifier)
+                    println((stepResult as! ORKQuestionResult).answer)
+                }
+                
+                if stepResult.identifier == Identifier.WeightStep.value() {
+                    println(stepResult.identifier)
+                    //println("value " + )
+                }
+            }
+        }
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func unwindToViewController (sender: UIStoryboardSegue){
         
+            //get source viewcontroller, get [ORKResults] on source
+    
     }
 }

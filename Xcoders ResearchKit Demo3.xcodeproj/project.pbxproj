@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030A34DE1B0C219900EC50FF /* SurveyTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A34DD1B0C219900EC50FF /* SurveyTaskManager.swift */; };
+		030A34E41B0D739B00EC50FF /* ResultsTabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A34E31B0D739B00EC50FF /* ResultsTabelViewController.swift */; };
 		033FB7C11B0464BB00B9020E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033FB7C01B0464BB00B9020E /* Main.storyboard */; };
 		034FEC701B06C7BF00F22986 /* IFConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FEC6F1B06C7BF00F22986 /* IFConsent.swift */; };
 		034FEC7C1B06D2E600F22986 /* HTMLContent in Resources */ = {isa = PBXBuildFile; fileRef = 034FEC7B1B06D2E600F22986 /* HTMLContent */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		030A34DD1B0C219900EC50FF /* SurveyTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTaskManager.swift; sourceTree = "<group>"; };
+		030A34E31B0D739B00EC50FF /* ResultsTabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTabelViewController.swift; sourceTree = "<group>"; };
 		033FB7C01B0464BB00B9020E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		034FEC6F1B06C7BF00F22986 /* IFConsent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFConsent.swift; sourceTree = "<group>"; };
 		034FEC7B1B06D2E600F22986 /* HTMLContent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTMLContent; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				034FEC7B1B06D2E600F22986 /* HTMLContent */,
 				033FB7C01B0464BB00B9020E /* Main.storyboard */,
 				037A64241B025F5B000A278E /* AppDelegate.swift */,
+				030A34E31B0D739B00EC50FF /* ResultsTabelViewController.swift */,
 				034FEC871B0967F300F22986 /* MainViewController.swift */,
 				037A642B1B025F5B000A278E /* Images.xcassets */,
 				033FB7C21B046BAE00B9020E /* Consent */,
@@ -312,6 +315,7 @@
 			files = (
 				034FEC861B093F8B00F22986 /* QualificationViewController.swift in Sources */,
 				037A64271B025F5B000A278E /* ConsentViewController.swift in Sources */,
+				030A34E41B0D739B00EC50FF /* ResultsTabelViewController.swift in Sources */,
 				037A64251B025F5B000A278E /* AppDelegate.swift in Sources */,
 				034FEC881B0967F300F22986 /* MainViewController.swift in Sources */,
 				034FEC701B06C7BF00F22986 /* IFConsent.swift in Sources */,
