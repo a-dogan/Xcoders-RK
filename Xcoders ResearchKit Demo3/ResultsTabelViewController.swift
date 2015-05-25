@@ -12,6 +12,7 @@ import ResearchKit
 class ResultsTabelViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     var results = [ORKResult]()
+    var resultsType = StepIdentifiers.UndefinedStep
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class ResultsTabelViewController: UITableViewController, UITableViewDataSource, 
         func getRowIdentifier() -> String? {
             switch self.rawValue {
             case 0:
-                    return "RowID"
+                    return "TaskIdentifier"
             case 1:
                     return "StartDate"
             case 2:
@@ -39,20 +40,42 @@ class ResultsTabelViewController: UITableViewController, UITableViewDataSource, 
         }
     }
     
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        return 3
-    }
-    
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if let rowId = RowIdentifier(rawValue: indexPath.row)?.getRowIdentifier() {
-             let cell = tableView.dequeueReusableCellWithIdentifier(rowId, forIndexPath: indexPath) as! UITableViewCell
+        if results.count > 0 {
+            return results.count + 3 //RowId + StartDate + EndDate
         }
         
+        return 1
+    }
+    
+    //MARK: cellForRowAtIndePath
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if results.count > 0 {
+            if indexPath.row <= 2  {
+                if let rowId = RowIdentifier(rawValue: indexPath.row)?.getRowIdentifier() {
+                    let cell = tableView.dequeueReusableCellWithIdentifier(rowId, forIndexPath: indexPath) as! UITableViewCell
+                    
+                    switch indexPath.row {
+                    case RowIdentifier.IDRow.rawValue:
+                        cell.textLabel!.text = self.results[0].identifier
+                        break
+                    case RowIdentifier.StartDate.rawValue:
+                        cell.textLabel!.text = "Start Date " + self.results[0].startDate!.description
+                        break
+                    case RowIdentifier.EndDate.rawValue:
+                         cell.textLabel!.text = "End Date " + self.results[0].endDate!.description
+                        break
+                    default:
+                        return tableView.dequeueReusableCellWithIdentifier("EmptyCell", forIndexPath: indexPath) as! UITableViewCell
+                    }
+                    return cell
+                }
+            }
+        }
        
         return tableView.dequeueReusableCellWithIdentifier("EmptyCell", forIndexPath: indexPath) as! UITableViewCell
     }
-
 }

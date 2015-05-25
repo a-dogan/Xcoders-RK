@@ -10,7 +10,9 @@ import UIKit
 import ResearchKit
 
 class MainViewController: UIViewController, ORKTaskViewControllerDelegate {
-
+    
+    var results = [ORKResult]()
+    
     enum Identifier:String {
         case InstructionStep = "Instruction", WeightStep = "Weight"
         
@@ -82,9 +84,19 @@ class MainViewController: UIViewController, ORKTaskViewControllerDelegate {
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
-        
-            //get source viewcontroller, get [ORKResults] on source
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ResultsSegue" {
+            if let resultsVC = segue.destinationViewController as? ResultsTabelViewController {
+                resultsVC.results = self.results
+            }
+        }
+    }
     
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
+        if sender.identifier == "returnToMainVCFromQualified" {
+            if let consentVC = sender.sourceViewController as? ConsentViewController {
+                self.results = consentVC.results
+            }
+        }
     }
 }

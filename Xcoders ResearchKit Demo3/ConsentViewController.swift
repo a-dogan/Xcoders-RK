@@ -11,6 +11,9 @@ import ResearchKit
 
 class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
 
+    var results = [ORKResult]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,8 +26,7 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
 
 
     @IBAction func launchConsent(sender: AnyObject) {
-        let consentSteps = IFConsent().studyOverviewSteps()
-        let task = ORKOrderedTask(identifier: "identifier", steps: [consentSteps, IFConsent().reviewConsent()])
+        let task = ORKOrderedTask(identifier: "VisualReviewTask", steps: [IFConsent().studyOverviewSteps()])
         
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
         taskViewController.delegate = self
@@ -34,7 +36,7 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
     
     
     @IBAction func reviewAndAgreeConsent(sender:AnyObject) {
-        let task = ORKOrderedTask(identifier: "reviewConsent", steps: [IFConsent().reviewConsent()])
+        let task = ORKOrderedTask(identifier: "ReviewAgreeTask", steps: [IFConsent().reviewConsent()])
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
         taskViewController.delegate = self
         
@@ -56,7 +58,7 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
         taskResultFinishedCompletionHandler(taskViewController.result)
         
         taskViewController.dismissViewControllerAnimated(true, completion: {
-                self.performSegueWithIdentifier("backToMainViewController", sender: self)
+                self.performSegueWithIdentifier("returnToMainVCFromQualified", sender: self)
             }
             
         )
@@ -64,11 +66,7 @@ class ConsentViewController: UIViewController, ORKTaskViewControllerDelegate {
     
     
     func taskResultFinishedCompletionHandler(result:ORKTaskResult) {
-        if let taskResult:[ORKResult] = result.results as? [ORKResult] {
-            for stepResult in taskResult {
-                println(stepResult)
-            }
-        }
+        self.results = result.results as! [ORKResult]
     }
 }
 

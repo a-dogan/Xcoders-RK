@@ -11,14 +11,7 @@ import ResearchKit
 
 class IFConsent {
     
-    enum StepConstants: String {
-        case VisualConsentStep = "VisualConsentStep", ReviewConsentSignatureStep = "ReviewConsentSignatureStep"
-        
-        func value() -> String {
-            return rawValue
-        }
-    }
-    
+    //MARK: VisualConsentSteps
     //Step for the visual description of the study
     func studyOverviewSteps() -> ORKVisualConsentStep {
         let document:ORKConsentDocument = ORKConsentDocument()
@@ -26,9 +19,10 @@ class IFConsent {
         // Create additional section objects for later sections
         document.sections = [overviewSection(), dataSectionConsent(), timeSectionConsent(), privateSectionConsent()]
         
-        return ORKVisualConsentStep(identifier: StepConstants.VisualConsentStep.value(), document: document)
+        return ORKVisualConsentStep(identifier: StepIdentifiers.VisualConsentStep.value(), document: document)
     }
     
+    //MARK: ConsentDocument Signature
     //step for accepting the terms of the study and providing a signature
     func reviewConsent() -> ORKConsentReviewStep {
         let document:ORKConsentDocument = ORKConsentDocument()
@@ -42,14 +36,16 @@ class IFConsent {
         
         document.addSignature(participantSignature)
         
-        let reviewStep = ORKConsentReviewStep(identifier: StepConstants.ReviewConsentSignatureStep.value(),
+        let reviewStep = ORKConsentReviewStep(identifier: StepIdentifiers.ReviewConsentSignatureStep.value(),
             signature: document.signatures!.first as? ORKConsentSignature,
             inDocument: document)
         
+        reviewStep.reasonForConsent = "I agree and give my consent to particiapte."
         reviewStep.text = "Please review and accept to participate in this study"
         
         return reviewStep
     }
+    
     
     private func overviewSection() -> ORKConsentSection {
         let overviewSection = ORKConsentSection(type: ORKConsentSectionType.Overview)
