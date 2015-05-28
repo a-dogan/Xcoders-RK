@@ -40,18 +40,18 @@ class IFConsent {
             signature: document.signatures!.first as? ORKConsentSignature,
             inDocument: document)
         
-        reviewStep.reasonForConsent = "I agree and give my consent to particiapte."
-        reviewStep.text = "Please review and accept to participate in this study"
+        reviewStep.reasonForConsent = "I agree and give my consent to particpate."
+        reviewStep.text = "Please review and accept to participate in this study."
         
         return reviewStep
     }
     
-    
+    //MARK: Visual Consent Sections
     private func overviewSection() -> ORKConsentSection {
         let overviewSection = ORKConsentSection(type: ORKConsentSectionType.Overview)
         
         overviewSection.title = "Welcome to the Intermittent Fasting Research Study"
-        overviewSection.summary = "This study is for understanding how Intermittent Fasting affect p to and from work"
+        overviewSection.summary = "This study is for understanding how intermittent fasting affects your daily mood"
         overviewSection.content = "This study is sponsored by the X University, Seattle WA"
         
         return overviewSection
@@ -68,12 +68,14 @@ class IFConsent {
     
     private func timeSectionConsent() -> ORKConsentSection {
         let timeSection = ORKConsentSection(type: ORKConsentSectionType.TimeCommitment)
+        
         return timeSection
     }
     
     
     private func privateSectionConsent() -> ORKConsentSection {
         let privacySection = ORKConsentSection(type: ORKConsentSectionType.Privacy)
+        
         return privacySection
     }
     

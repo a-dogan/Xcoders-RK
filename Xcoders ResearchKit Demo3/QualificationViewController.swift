@@ -12,7 +12,6 @@ class QualificationViewController: UITableViewController {
     
     enum SegmentChoices:Int {
         case AgeChoice = 0, DocterChoice, PregnantChoice
-    
     }
     
     var isQualified:Bool = false
@@ -23,11 +22,8 @@ class QualificationViewController: UITableViewController {
     
     
     override func viewDidLoad() {
-    
-    
-    
+        
     }
-    
     
     @IBAction func choiceDidChange(sender:AnyObject) {
         enum Choice:Int {
